@@ -3,26 +3,119 @@
 *@
 @{
     }
-   <table class="table table table-bordered table-striped text-center" ">
-    <tbody>
-        <tr rowspan="2">
-            <td colspan="2">
-                <img src="~/Images/austinneil.jpg" class="rounded-circle img-fluid" style="width:150px;">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h5 class="my-3">Agent Vikram</h5>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="btn btn-primary"> Subscriptions</button>
-                <button class="btn btn-outline-primary">Downloads</button>
-            </td>
-        </tr>
-        <tr><td>
-                <i class="fa-solid fa-house"> Perungudi</i>
-        </td></tr>
-    </tbody>
-</table>
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <!-- Navigation bar-->
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a asp-controller="home" asp-action="index">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <a asp-controller="user" asp-action="index">User Profile</a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!--Profile Image-->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="~/Images/austinneil.jpg" 
+                          class="rounded-circle img-fluid" 
+                          style="width: 150px;"
+                          alt="Avater">
+                          <p class="text-muted mb-1">Deveveloper, Wanderer and Always a Sytdent</p>
+                          <p class="text-muted mb-4">Sate, Address</p>
+                          <div class="d-flex justify-content-center mb-2">
+                            <button type="button" class="btn btn-primary">Subscription</button>
+                            <button type="button" class="btn btn-outline-primary ms-1">Your Songs</button>
+                          </div>
+                    </div>
+                </div>
+                <div class="card mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush rounded-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fas fa-address-card fa-lg" style="color: black;"></i>
+                                <p class="mb-0">Address</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                                <p class="mb-0">MyIG</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                                <p class="mb-0">MyHandleABC</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Steve James Balmer Gosling</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Balmer.Gosling@microsun.com</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Contact Number</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">+91 9100 563776</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Address</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">Door #, Street, Location, District, Country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="card-body">
+                        <p class="card-header">Recent Albums</p>
+                        <ul class="list-group">
+                            <li class="list-group-item ">
+                                <p class="text-primary me-1">Album</p>
+                                <p class="text-muted"> Artist-1, Artist-2.....</p>
+                            </li>
+                            
+                            <li class="list-group-item ">
+                                <p class="text-primary me-1">Album</p>
+                                <p class="text-muted"> Artist-1, Artist-2.....</p>
+                            </li>
+                            <li class="list-group-item ">
+                                <p class="text-primary me-1">Album</p>
+                                <p class="text-muted"> Artist-1, Artist-2.....</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
