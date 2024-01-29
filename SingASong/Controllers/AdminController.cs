@@ -14,5 +14,9 @@ namespace SingASong.Controllers
         {
             return View();
         }
+        public IActionResult Manage()
+        {
+            return View();
+        }
     }
 }
