@@ -12,7 +12,14 @@ namespace SingASong.Controllers
         {
             _logger = logger;
         }
-
+        public IActionResult Thankyoupage()
+        {
+            return View();
+        }
+        public IActionResult Register()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
