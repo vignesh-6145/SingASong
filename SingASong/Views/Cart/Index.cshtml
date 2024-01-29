@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<div class="list-group">
+
+    <!-- Cart items --><div class="list-group-item">
+
+        <img src="song1.jpg" alt="Song 1">
+
+        <div class="cart-item-info">
+
+            <h3>Song Title 1</h3>
+
+            <p>Original Price: <span>Rs.20.00</span></p>
+
+            <p class="discounted">Discounted Price: Rs.10.00</p>
+
+        </div>
+
+        <div class="cart-item-actions">
+
+            <button class="btn btn-danger">Remove</button>
+
+        </div>
+
+    </div>
+
+    <div class="list-group-item">
+
+        <img src="song2.jpg" alt="Song 2">
+
+        <div class="cart-item-info">
+
+            <h3>Song Title 2</h3>
+
+            <p>Original Price: <span>Rs.20.00</span></p>
+
+            <p class="discounted">Discounted Price: Rs.10.00</p>
+
+        </div>
+
+        <div class="cart-item-actions">
+
+            <button class="btn btn-danger">Remove</button>
+
+        </div>
+
+    </div>
+
+    <!-- End Cart items -->
+    <!-- Cart summary -->
+
+    <div class="cart-summary">
+
+        <span>Total Items: 2</span>
+
+        <span>Total Amount: Rs.20.00</span>
+
+    </div>
+
+    <!-- Coupon section -->
+
+    <div class="coupon-section">
+
+        <input type="text" class="coupon-input" placeholder="Enter Coupon Code">
+
+        <button class="btn btn-outline-primary">Apply Coupon</button>
+
+    </div>
+
+    <!-- End Cart summary -->
+    <!-- Cart actions -->
+
+    <div class="cart-actions">
+
+        <a href="#" class="btn">Continue Shopping</a>
+
+        <a class="btn btn-primary" asp-controller="PaymentPortal" asp-action="Payment">Checkout</a>
+
+    </div>
+
+    <!-- End Cart actions -->
+
+</div>
+
