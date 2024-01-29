@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    form {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        position: relative;
+        z-index: 1;
+        background: #ffffff;
+        opacity: 99%;
+        max-width: 260px;
+        margin: 100px auto 50px;
+        margin-top: 50px;
+        padding: 10px 35px 20px 35px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
+        border-radius: 10px
+    }
+
+        form p {
+            font: 20px;
+            font-size: larger;
+            padding: 1px;
+            text-align: center;
+        }
+
+        form input {
+            outline: 0;
+            border-radius: 10px;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+            form input:focus {
+                background-color: thistle;
+                transition: all ease-in 0s;
+            }
+
+            form input:hover {
+                background-color: thistle;
+                transition: all ease-in 0s;
+            }
+
+        form button {
+            text-transform: capitalize;
+            outline: 0;
+            border-radius: 10px;
+            background: purple;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #ffffff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+            form button:hover, form button:active, form button:focus {
+                background-color: thistle;
+                transition: all ease-in 0s;
+            }
+
+    #head {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 10px;
+        font-style: oblique;
+    }
+</style>
+<body>
+    <header class="head"><h2><i><center>Sing A Song</center></i></h2></header>
+    <form>
+        <p>Login</p>
+
+        <input type="email" placeholder="Enter your email id" required />
+        <input type="password" placeholder="Enter your password" required />
+        <button class="button">Login Now </button>
+        <div class="login_register">Don't have an account?</div>
+        <a href="#" id="register">Register</a>
+    </form>
+
+</body>
