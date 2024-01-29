@@ -12,6 +12,10 @@ namespace SingASong.Controllers
         {
             _logger = logger;
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
         public IActionResult Thankyoupage()
         {
             return View();
