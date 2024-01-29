@@ -1,0 +1,98 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <div class="col col-lg-8">
+        <a asp-controller="Cart" asp-action="ShoppingCart" class="go-back-btn">&lt; Go Back</a>
+        <div id="payment-details">
+            <h2>Payment Details</h2>
+
+            <div>
+                <strong>Items in Cart:</strong> <span id="item-count">3</span>
+            </div>
+            <div>
+                <strong>Cart Items:</strong>
+                <ul>
+                    <li>Song 1 - Rs.10.00</li>
+                    <li>Song 2 - Rs.15.00</li>
+                    <li>Song 3 - Rs.20.00</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Original Price:</strong> Rs.<span id="original-price">45.00</span>
+            </div>
+            <div>
+                <strong>Discounted Price:</strong> Rs.<span id="discounted-price">40.00</span>
+            </div>
+            <div>
+                <strong>Discount:</strong> Rs.<span id="discount">5.00</span>
+            </div>
+            <div>
+                <strong>Payment Method:</strong> <span id="payment-method">Credit Card</span>
+            </div>
+
+            <div id="payment-button">
+                <button onclick="redirectToPayment()">Pay: Rs.<span id="total-amount">40.00</span></button>
+            </div>
+        </div>
+
+    </div>
+    <div class="col col-lg-4">
+        <div class="payment-container">
+            <h2>Select Payment Mode</h2>
+
+            <div class="payment-options">
+                <label for="creditCard">
+                    <input type="radio" id="creditCard" name="paymentMode" value="creditCard">
+                    Credit Card
+                </label>
+                <label for="upi">
+                    <input type="radio" id="upi" name="paymentMode" value="upi">
+                    UPI
+                </label>
+                <label for="wallet">
+                    <input type="radio" id="wallet" name="paymentMode" value="wallet">
+                    Wallet
+                </label>
+                <!-- Add more payment options as needed -->
+            </div>
+
+            <form>
+                <div class="form-group" id="creditCardDetails">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+                    <label for="nameOnCard">Name on Card</label>
+                    <input type="text" class="form-control" id="nameOnCard" placeholder="Enter name on card">
+                    <label for="validity">Validity</label>
+                    <input type="text" class="form-control" id="validity" placeholder="MM/YY">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+                </div>
+
+                <div class="form-group" id="upiDetails">
+                    <label for="upiId">UPI ID</label>
+                    <input type="text" class="form-control" id="upiId" placeholder="Enter UPI ID">
+                </div>
+
+                <div class="form-group wallet-options" id="walletOptions">
+                    <label for="paytm">
+                        <input type="radio" id="paytm" name="walletType" value="paytm">
+                        Paytm
+                    </label>
+                    <label for="amazon">
+                        <input type="radio" id="amazon" name="walletType" value="amazon">
+                        Amazon Wallet
+                    </label>
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick="processPayment()">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Payment method strt-->
+
+<!--Payment method end-->
+
