@@ -8,5 +8,9 @@ namespace SingASong.Controllers
         {
             return View();
         }
+        public IActionResult Payment()
+        {
+            return View();
+        }
     }
 }
