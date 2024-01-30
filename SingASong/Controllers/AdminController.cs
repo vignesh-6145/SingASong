@@ -18,5 +18,10 @@ namespace SingASong.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult EditTrack(int id)
+        {
+            return View();
+        }
     }
 }
