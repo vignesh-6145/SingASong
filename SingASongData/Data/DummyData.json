@@ -1,5 +1,4 @@
-{
-  "tracks": [
+[
     {
       "TrackID": 1,
       "Name": "What Makes you Beautiful",
@@ -134,4 +133,3 @@
       "Album": "Divide"
     }
   ]
-}
