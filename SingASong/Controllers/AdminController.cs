@@ -1,6 +1,7 @@
 ﻿
 
 using Microsoft.AspNetCore.Mvc;
+using SingASongData.Models;
 
 namespace SingASong.Controllers
 {
@@ -16,12 +17,16 @@ namespace SingASong.Controllers
         }
         public IActionResult Manage()
         {
-            return View();
+            MockTrackRepository trackRepository = new MockTrackRepository();
+            List<Track> tracks = trackRepository.GetTracks();
+            return View(tracks);
         }
         [HttpGet]
         public IActionResult EditTrack(int id)
         {
-            return View();
+            MockTrackRepository trackRepository = new MockTrackRepository();
+            Track track = trackRepository.GetTrack(id);
+            return View(track);
         }
     }
 }

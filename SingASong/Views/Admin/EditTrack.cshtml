@@ -1,32 +1,52 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model SingASongData.Models.Track
 @{
 }
 <p class="text-muted">It's really good, you are making the move</p>
 <form>
-    <div class="form-group row">
+    <div class="form-group row m-1">
         <label for="TrackId" class="col-sm-2 col-form-label">TrackID</label>
         <div class="col-sm-10">
-            <input type="number" class="form-control" id="TrackID" placeholder="1" disabled>
+            <input type="number" class="form-control" id="TrackID" placeholder="1" value="@Model.TrackId" disabled>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group row m-1">
         <label for="Name" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="Name" placeholder="Name Abba">
+            <input type="text" class="form-control" id="Name" placeholder="Name Abba" value="@Model.Name">
         </div>
     </div>
-    <div class="form-group row">
-        <label for="Artist(s)" class="col-sm-2 col-form-label"></label>
+    <div class="form-group row m-1">
+        <label for="Album" class="col-sm-2 col-form-label">Album</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="Artist(s)" placeholder="">
+            <input type="text" class="form-control" id="Album" placeholder="Album" value="@Model.Album">
         </div>
+    </div >
+    <div class="form-group row m-1">
+        <label for="Artist(s)" class="col-sm-2 col-form-label">Artist(s)</label>
+        @foreach(var artist in Model.Artists)
+        {
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Artist(s)" placeholder="" value="@artist">
+            </div>
+        }
     </div>
-    <div class="form-group row">
-        <label for="Genre" class="col-sm-2 col-form-label"></label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="Genre" placeholder="">
-        </div>
+    <br>
+    <div class="form-group row m-1">
+        <label for="Genre(s)" class="col-sm-2 col-form-label">Genre(s)</label>
+        @foreach (var genre in Model.Genres)
+        {
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Genre(s)" placeholder="" value="@genre">
+            </div>
+        }
+    </div>
+    
+    <div class="form-group row m-1">
+        <btn class="btn btn-warning" typeof="Submit">Edit</btn>
     </div>
 </form>

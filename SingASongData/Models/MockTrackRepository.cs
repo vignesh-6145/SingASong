@@ -31,7 +31,7 @@ namespace SingASongData.Models
             track.Artists.Add((string)obj["Artist"][0]);
 
             track.Genres = new List<string>();
-            track.Artists.Add((string)obj["Genre"][0]);
+            track.Genres.Add((string)obj["Genre"][0]);
             return track;
 
         }
