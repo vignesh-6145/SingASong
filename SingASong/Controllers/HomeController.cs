@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using SingASong.Clients;
 using SingASong.Models;
-using SingASongData.Models;
+using SingASong.Models.ViewModels;
 using System.Diagnostics;
 
 namespace SingASong.Controllers
@@ -37,8 +38,8 @@ namespace SingASong.Controllers
 
         public IActionResult Shop()
         {
-            MockTrackRepository TrackRepository = new MockTrackRepository();
-            List<Track> items = TrackRepository.GetTracks();
+            var client = new CatalogueClient();
+            var items = client.GetCatalogueItems();
             return View(items);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
