@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SingASong.Models;
+using SingASongData.Models;
 using System.Diagnostics;
 
 namespace SingASong.Controllers
@@ -36,7 +37,9 @@ namespace SingASong.Controllers
 
         public IActionResult Shop()
         {
-            return View();
+            MockTrackRepository TrackRepository = new MockTrackRepository();
+            List<Track> items = TrackRepository.GetTracks();
+            return View(items);
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
