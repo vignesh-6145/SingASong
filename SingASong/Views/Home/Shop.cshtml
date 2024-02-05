@@ -4,7 +4,7 @@
 @model IEnumerable<SingASong.Models.ViewModels.CatalogueItem>
 @{
 }
-<a asp-controller="Cart" asp-action="Index" >Go to Cart</a>
+<a asp-controller="Cart" asp-action="Index" asp-route-UserID="31">Go to Cart</a>
 <div class="row row-cols-1 row-cols-md-3">
     
     <!-- col start dyn-->
@@ -22,7 +22,12 @@
                         }
                     </h6>
                     <p class="card-text">@item.Album</p>
-                    <button class="btn btn-primary card-link">Add To Cart</button>
+                    <a class="btn btn-primary card-link"
+                        asp-controller="Home"
+                       asp-action="addTocart"
+                       asp-route-UserID="31"
+                        asp-route-TrackID="@item.ID">Add To Cart</a>
+                    @* <button class="btn btn-primary card-link" onclick="addToCart(@item.ID)">Add To Cart</button> *@
                     <button class="btn btn-outline-primary card-link">Buy</button>
                 </div>
             </div>

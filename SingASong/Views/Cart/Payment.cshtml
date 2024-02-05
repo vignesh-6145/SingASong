@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model SingASong.Models.ViewModels.CartContents
 @{
 }
 <div class="row">
@@ -14,27 +15,26 @@
             </div>
             <div>
                 <strong>Cart Items:</strong>
-                <ul>
-                    <li>Song 1 - Rs.10.00</li>
-                    <li>Song 2 - Rs.15.00</li>
-                    <li>Song 3 - Rs.20.00</li>
+                <ul class="list-group">
+                    @foreach (var item in Model.items)
+                    {
+                        <li class="list-group-item d-flex justify-content-around">
+                            <span class="text-body">@item.Name</span>
+                            <span class="text-muted">@(item.Price - item.Discount)</span>
+                        </li>
+                    }
                 </ul>
             </div>
             <div>
-                <strong>Original Price:</strong> Rs.<span id="original-price">45.00</span>
+                <strong>Total Price (after discounts)</strong> Rs.<span id="original-price">@Model.CartPrice</span>
             </div>
-            <div>
-                <strong>Discounted Price:</strong> Rs.<span id="discounted-price">40.00</span>
-            </div>
-            <div>
-                <strong>Discount:</strong> Rs.<span id="discount">5.00</span>
-            </div>
+            
             <div>
                 <strong>Payment Method:</strong> <span id="payment-method">Credit Card</span>
             </div>
 
             <div id="payment-button">
-                <button onclick="redirectToPayment()">Pay: Rs.<span id="total-amount">40.00</span></button>
+                <button onclick="redirectToPayment()">Pay: Rs.<span id="total-amount">@Model.CartPrice</span></button>
             </div>
         </div>
 

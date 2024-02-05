@@ -1,16 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SingASong.Clients;
+using SingASong.Models.ViewModels;
 
 namespace SingASong.Controllers
 {
     public class CartController : Controller
     {
-        public IActionResult Index()
+        CartClient client { get; set; }
+        public CartController()
         {
-            return View();
+           client = new CartClient();
         }
-        public IActionResult Payment()
+        [Route("{UserID:int}")]
+        public IActionResult Index(int UserID)
         {
-            return View();
+            var items = client.GetCartItems(UserID);
+            var price = items.Sum(record => record.Price-record.Discount);
+            var cartContent = new CartContents();
+            cartContent.items = items;
+            cartContent.CartPrice = price;
+            return View(cartContent);
+        }
+        [Route("Payment/{UserID:int}")]
+        public IActionResult Payment(int UserID)
+        {
+            var items = client.GetCartItems(UserID);
+            var price = items.Sum(record => record.Price - record.Discount);
+            var cartContent = new CartContents();
+            cartContent.items = items;
+            cartContent.CartPrice = price;
+            return View(cartContent);
         }
     }
 }

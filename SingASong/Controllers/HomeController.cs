@@ -8,6 +8,7 @@ namespace SingASong.Controllers
 {
     public class HomeController : Controller
     {
+        public static int UserID = 31;
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -35,7 +36,14 @@ namespace SingASong.Controllers
         {
             return View();
         }
-
+        [Route("addToCart/{UserID:int}/Track/{TrackID:int}")]
+        public IActionResult addTocart(int UserID, int TrackID)
+        {
+            var cliet = new CatalogueClient();
+            var items = cliet.AddToCart(UserID,TrackID);
+            Console.WriteLine($"made addToCart request {items}");
+            return RedirectToAction("Shop");
+        }
         public IActionResult Shop()
         {
             var client = new CatalogueClient();

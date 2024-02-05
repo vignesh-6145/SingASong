@@ -29,7 +29,12 @@ namespace SingASong.Clients
             }
             return items;
         }
-
+        public string AddToCart(int UserID, int TracKID)
+        {
+            string AddToCartURL = $"User/{UserID}/AddToCart/{TracKID}";
+            string resp = client.MakePostCall(AddToCartURL);
+            return resp;
+        }
 
     }
 }

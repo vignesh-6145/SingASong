@@ -33,6 +33,21 @@ namespace SingASong.Clients
 
             return item;
         }
+        public static CartItem ConvertToCartItem(string str)
+        {
+            JToken obj = JToken.Parse(str);
+            return ConvertToCartItem(obj);
+        }
+        public static CartItem ConvertToCartItem(JToken obj)
+        {
+            CartItem item = new CartItem();
+            item.Id = int.Parse(obj["id"].ToString());
+            item.Name = obj["name"].ToString();
+            item.UserId = int.Parse(obj["userID"].ToString());
+            item.Price = decimal.Parse(obj["price"].ToString());
+            item.Discount = decimal.Parse(obj["discount"].ToString());
+            return item;
+        }
         public static Album ConvertToAlbum(string str)
         {
             var obj = JObject.Parse(str);
